@@ -1,103 +1,115 @@
-import Image from "next/image";
+import Link from 'next/link'
+import About from '@/components/sections/About'
+import Experience from '@/components/sections/Experience'
+import Education from '@/components/sections/Education'
+import Research from '@/components/sections/Research'
+import Projects from '@/components/sections/Projects'
+import SocialLinks from '@/components/ui/SocialLinks'
+import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen">
+      {/* Navigation */}
+      <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <div className="flex-shrink-0 flex items-center gap-2">
+              <span className="text-2xl">⚛️</span>
+              <Link href="/" className="text-xl font-bold">
+                Paul Devianne 
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-center space-x-4">
+                <Link href="#about" className="hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                  About
+                </Link>
+                <Link href="#education" className="hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                  Education
+                </Link>
+                <Link href="#experience" className="hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                  Experience
+                </Link>
+                <Link href="#research" className="hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                  Research
+                </Link>
+                <Link href="#projects" className="hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                  Projects
+                </Link>
+                <Link href="#contact" className="hover:text-gray-600 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative py-20">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/50 z-10" />
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/images/background.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        </div>
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center pt-12">
+            <div className="relative w-48 h-48 mx-auto mb-8">
+              <div className="absolute inset-0 rounded-full border-4 border-white/20 shadow-lg" />
+              <Image
+                src="/images/profile.png"
+                alt="Paul Devianne"
+                fill
+                className="rounded-full object-cover"
+                priority
+              />
+            </div>
+            <h1 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+              Paul Devianne
+            </h1>
+            <p className="mt-4 text-xl text-gray-100">
+              Master Student @ <span className="font-bold">EPFL</span> in Computational Science and Engineering
+            </p>
+            <p className="mt-4 text-lg text-gray-200 italic">
+              "Between math and physics lies a conversation I am interested in."
+            </p>
+            <div className="mt-8">
+              <SocialLinks />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-24 h-px bg-gray-200 dark:bg-gray-700 mx-auto" />
+
+      {/* About Section */}
+      <About />
+
+      <div className="w-24 h-px bg-gray-200 dark:bg-gray-700 mx-auto" />
+
+      {/* Education Section */}
+      <Education />
+
+      <div className="w-24 h-px bg-gray-200 dark:bg-gray-700 mx-auto" />
+
+      {/* Experience Section */}
+      <Experience />
+
+      <div className="w-24 h-px bg-gray-200 dark:bg-gray-700 mx-auto" />
+
+      {/* Research Section */}
+      <Research />
+
+      <div className="w-24 h-px bg-gray-200 dark:bg-gray-700 mx-auto" />
+
+      {/* Projects Section */}
+      <Projects />
+    </main>
+  )
 }
