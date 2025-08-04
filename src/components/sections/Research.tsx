@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
 
 interface ResearchItem {
   title: string
@@ -15,21 +16,21 @@ const researchItems: ResearchItem[] = [
   {
     title: 'Graph Neural Networks in Battery Material simulations',
     description: 'Master Thesis at NUS (Singapore) — Feb. 2025 - Sept. 2025',
-    image: '/images/research/neb.png',
+    image: getAssetPath('/images/research/neb.png'),
     tags: ['Graph-NN', 'Monte Carlo', 'NEB', 'Fast-Ion Conductors'],
     slug: 'gnn-deng'
   },
   {
     title: '3D U-Net for Predicting stress in composite materials',
     description: 'Research Project at LSMS-EPFL (Lausanne) — Feb. 2024 - Sept. 2024',
-    image: '/images/research/ann.png',
+    image: getAssetPath('/images/research/ann.png'),
     tags: ['U-Net', 'Deformation Physics', 'Pytorch', 'Scientific writing'],
     slug: 'unet-lsms'
   },
   {
     title: 'Evaluation of Reconstruction models for fetal-brain MRI',
     description: 'Research Project at LTS5-EPFL (Lausanne) — Feb. 2023 - Sept. 2023',
-    image: '/images/research/fetal.png',
+    image: getAssetPath('/images/research/fetal.png'),
     tags: ['Quality Assessment', 'Deep Learning', 'Ill-posed Problem', 'Medical Imaging'],
     slug: 'fmri-mial'
   },

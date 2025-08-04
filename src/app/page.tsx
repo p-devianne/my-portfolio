@@ -6,6 +6,7 @@ import Research from '@/components/sections/Research'
 import Projects from '@/components/sections/Projects'
 import SocialLinks from '@/components/ui/SocialLinks'
 import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
 
 export default function Home() {
   return (
@@ -51,7 +52,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/50 z-10" />
           <Image
-            src="/images/background.jpg"
+            src={getAssetPath("/images/background.jpg")}
             alt="Background"
             fill
             className="object-cover"
@@ -63,7 +64,7 @@ export default function Home() {
             <div className="relative w-48 h-48 mx-auto mb-8">
               <div className="absolute inset-0 rounded-full border-4 border-white/20 shadow-lg" />
               <Image
-                src="/images/profile.png"
+                src={getAssetPath("/images/profile.png")}
                 alt="Paul Devianne"
                 fill
                 className="rounded-full object-cover"

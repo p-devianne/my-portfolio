@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
 
 interface Project {
   title: string
@@ -15,21 +16,21 @@ const projects: Project[] = [
   {
     title: 'C++ software for Monte Carlo calculations',
     description: 'Software package for Statistical moments estimation with Monte Carlo method',
-    image: '/images/projects/c++-mc.png',
+    image: getAssetPath('/images/projects/c++-mc.png'),
     technologies: ['Object-Oriented Programming', 'Google Test', 'Git Modules'],
     slug: 'mc-pcsc'
   },
   {
     title: 'Generative model for electron diffusion in tissues',
     description: 'Deep Generative model to mimick electron behaviour in human tissues.',
-    image: '/images/projects/ml-projet2.png',
+    image: getAssetPath('/images/projects/ml-projet2.png'),
     technologies: ['Pytorch', 'Generative Adversarial Networks', 'Data Analysis'],
     slug: 'gan-ml'
   },
   {
     title: 'Reinforcement Learning for Swiss epidemic government policy',
     description: 'Applying reinforcement learning techniques to optimize government policies for epidemic mitigation in Switzerland.',
-    image: '/images/projects/rl-swiss.png',
+    image: getAssetPath('/images/projects/rl-swiss.png'),
     technologies: ['Agent', 'Policy optimization', 'Deep-Q Learning'],
     slug: 'rl-swiss'
   },

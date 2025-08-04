@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getAssetPath } from '@/lib/utils'
 
 interface ResearchItem {
   title: string
@@ -18,7 +19,7 @@ const researchItems: Record<string, ResearchItem> = {
   'gnn-deng': {
     title: 'Graph Neural Networks in Battery Material simulations',
     description: 'Master Thesis at NUS (Singapore) — Feb. 2025 - Sept. 2025',
-    image: '/images/research/neb.png',
+    image: getAssetPath('/images/research/neb.png'),
     tags: ['Graph-NN', 'Monte Carlo', 'NEB', 'Fast-Ion Conductors'],
     publicationUrl: '',
     gitProjectUrl: '',
@@ -52,11 +53,11 @@ Networks. arXiv February 16, 2022. http://arxiv.org/abs/2102.09844 (accessed
     'unet-lsms': {
     title: '3D U-Net for Predicting stress in composite materials',
     description: 'Research Project at LSMS-EPFL (Lausanne) — Feb. 2024 - Sept. 2024',
-    image: '/images/research/ann.png',
+    image: getAssetPath('/images/research/ann.png'),
     tags: ['U-Net', 'Deformation Physics', 'Pytorch', 'Scientific writing'],
     publicationUrl: '',
     gitProjectUrl: 'https://github.com/p-devianne/ann_solidMaterialLaws',
-    researchReportUrl: '/pdfs/unet-lsms.pdf',
+    researchReportUrl: getAssetPath('/pdfs/unet-lsms.pdf'),
     content: `
       <p><strong>Project Description</strong></p>
           
@@ -73,11 +74,11 @@ Networks. arXiv February 16, 2022. http://arxiv.org/abs/2102.09844 (accessed
     'fmri-mial': {
     title: 'Evaluation of Reconstruction models for fetal-brain MRI',
     description: 'Research Project at LTS5-EPFL (Lausanne) — Feb. 2023 - Sept. 2023',
-    image: '/images/research/fetal.png',
+    image: getAssetPath('/images/research/fetal.png'),
     tags: ['Quality Assessment', 'Deep Learning', 'Ill-posed Problem', 'Medical Imaging'],
     publicationUrl: '',
     gitProjectUrl: 'https://github.com/Medical-Image-Analysis-Laboratory/fetal_brain_utils/tree/44c2891ff339a81579a44746c30e857a3fbd755f',
-    researchReportUrl: '/pdfs/fmri-mial.pdf',
+    researchReportUrl: getAssetPath('/pdfs/fmri-mial.pdf'),
     content: `
       <p><strong>Project Description</strong></p>
           

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getAssetPath } from '@/lib/utils'
 
 interface Project {
   title: string
@@ -17,7 +18,7 @@ const projects: Record<string, Project> = {
   'mc-pcsc': {
     title: 'C++ software for Monte Carlo calculations',
     description: 'Software package for Statistical moments estimation with Monte Carlo method',
-    image: '/images/projects/c++-mc.png',
+    image: getAssetPath('/images/projects/c++-mc.png'),
     technologies: ['Object-Oriented Programming', 'Google Test', 'Git Modules'],
     githubUrl: 'https://github.com/sprmsv/PCSC-MonteCarlo',
     projectReportUrl: '',
@@ -35,10 +36,10 @@ const projects: Record<string, Project> = {
   'gan-ml': {
     title: 'Generative model for electron diffusion in tissues',
     description: 'Deep Generative model to mimick electron behaviour in human tissues.',
-    image: '/images/projects/ml-projet2.png',
+    image: getAssetPath('/images/projects/ml-projet2.png'),
     technologies: ['Pytorch', 'Generative Adversarial Networks', 'Data Analysis'],
     githubUrl: 'https://github.com/clem2212/Projet02',
-    projectReportUrl: '/pdfs/gan-ml.pdf',
+    projectReportUrl: getAssetPath('/pdfs/gan-ml.pdf'),
     content: `
       <p><strong>Project Description</strong></p>
 
@@ -70,10 +71,10 @@ the same events with many less computations. </p>
   'rl-swiss': {
     title: 'Reinforcement Learning for Swiss epidemic government policy',
     description: 'Applying reinforcement learning techniques to optimize government policies for epidemic mitigation in Switzerland.',
-    image: '/images/projects/rl-swiss.png',
+    image: getAssetPath('/images/projects/rl-swiss.png'),
     technologies: ['Agent', 'Policy optimization', 'Deep-Q Learning'],
     githubUrl: 'https://github.com/paulblgr/Miniproject-ANN',
-    projectReportUrl: '/pdfs/rl-swiss.pdf',
+    projectReportUrl: getAssetPath('/pdfs/rl-swiss.pdf'),
     content: `
       <p>Project for the CS-456 EPFL-course on Deep-Q learning for epidemic mitigation.</p>
     `
