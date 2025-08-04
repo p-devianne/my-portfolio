@@ -118,6 +118,12 @@ MRI.” In: IEEE Trans Med Imaging (2023). </em></p>
   },
 }
 
+export async function generateStaticParams() {
+  return Object.keys(researchItems).map((slug) => ({
+    slug: slug,
+  }))
+}
+
 export default function ResearchPage({ params }: { params: { slug: string } }) {
   const research = researchItems[params.slug]
 

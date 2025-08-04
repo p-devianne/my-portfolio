@@ -80,6 +80,12 @@ the same events with many less computations. </p>
   }
 }
 
+export async function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({
+    slug: slug,
+  }))
+}
+
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects[params.slug]
 
