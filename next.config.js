@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  ...(process.env.NODE_ENV === 'production' && { output: 'export' }),
   trailingSlash: true,
   distDir: 'out',
   basePath: process.env.NODE_ENV === 'production' ? '/my-portfolio' : '',
