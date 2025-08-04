@@ -98,7 +98,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <main className="min-h-screen py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link 
-          href="/#projects"
+          href="#projects"
           className="inline-flex items-center text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white mb-8"
         >
           ← Back to Projects
