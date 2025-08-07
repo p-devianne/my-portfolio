@@ -64,7 +64,7 @@ export default function Home() {
               <div className="absolute inset-0 rounded-full border-4 border-white/20 shadow-lg" />
               <Image
                 src={getAssetPath("/images/profiles/profile_3.jpg")}
-                alt="Paul Devianne"
+                alt="Paul Devianne" 
                 fill
                 className="rounded-full object-cover"
                 priority
