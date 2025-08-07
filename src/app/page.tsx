@@ -63,7 +63,7 @@ export default function Home() {
             <div className="relative w-48 h-48 mx-auto mb-8">
               <div className="absolute inset-0 rounded-full border-4 border-white/20 shadow-lg" />
               <Image
-                src={getAssetPath("/images/profile.png")}
+                src={getAssetPath("/images/profiles/profile_3.jpg")}
                 alt="Paul Devianne"
                 fill
                 className="rounded-full object-cover"
@@ -77,7 +77,7 @@ export default function Home() {
               Master Student @ <span className="font-bold">EPFL</span> in Computational Science and Engineering
             </p>
             <p className="mt-4 text-lg text-gray-200 italic">
-              "Between math and physics lies a conversation I am interested in."
+              "Bridging theory and simulation, one equation at a time"
             </p>
             <div className="mt-8">
               <SocialLinks />

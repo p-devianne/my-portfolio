@@ -41,33 +41,41 @@ export default function About() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-[1fr,auto,1fr]">
           <div className="prose dark:prose-invert max-w-none md:max-w-xl">
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-              I am a Master student at EPFL in Computational Science and Engineering,
-               from the Mathematics department. 
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-              I am passionate about the <span className="font-bold">mathematical nature of physics</span>, and our ability to simulate it accurately.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-            Currently, I am doing my Master's thesis at NUS (Singapore) with Prof. Deng Zeyu.
-            I am developing an Equivariant Graph Neural Network to simulate ion transport in battery materials.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-            Originally from Lille (France), I did my High School in Luxembourg and moved to Lausanne
-             (Switzerland) for my Bachelor's degree in Physics.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-              I had always been interested in the fundamental laws of nature and our ability to model them. It motivated my choice for my studies.
-              During my Bachelor's, I developed a strong mathematical background, essential for Physics' theory.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-            Then, I have taken interest in Computational Physics and its potential for advancing physical knowledge, previously
-              unreachable from experiments.
-            Thus, I chose my Master to focus on Modeling and Computations. I improved my skills in mathematical modeling and discovered new tools such as Image Processing and Deep Learning.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 text-justify">
-            After my Master, I envision to pursue a PhD at the intersection between Computational Physics and Deep Learning.
-            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Current Status</h3>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>• <span className="font-medium">Master student at EPFL</span> in Computational Science and Engineering (Mathematics department)</li>
+                  <li>• <span className="font-medium">Master's thesis at NUS (Singapore)</span> with Prof. Deng Zeyu</li>
+                  <li>• Developing an <span className="font-medium">Equivariant Graph Neural Network</span> to simulate ion transport in battery materials</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Background & Passion</h3>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>• Originally from <span className="font-medium">Lille (France)</span>, High School in Luxembourg</li>
+                  <li>• Passionate about the <span className="font-bold text-indigo-600 dark:text-indigo-400">mathematical nature of physics</span> and accurate simulation capabilities</li>
+                  <li>• Always interested in <span className="font-medium">fundamental laws of nature</span> and our ability to model them</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Academic Journey</h3>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>• <span className="font-medium">Bachelor's in Physics at EPFL</span> - developed strong mathematical background</li>
+                  <li>• Discovered interest in <span className="font-medium">Computational Physics</span> and its potential for advancing physical knowledge</li>
+                  <li>• <span className="font-medium">Master's focus</span> on Modeling and Computations, Image Processing, and Deep Learning</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Future Vision</h3>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  <li>• Pursuing a <span className="font-medium">PhD at the intersection of Computational Physics and Deep Learning</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="hidden md:block w-px bg-gray-300 dark:bg-gray-700" />
           <div className="space-y-6 md:pl-8">
