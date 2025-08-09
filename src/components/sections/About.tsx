@@ -54,7 +54,7 @@ export default function About() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Background & Passion</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                  <li>• Originally from <span className="font-medium">Lille (France)</span>, High School in Luxembourg</li>
+                  <li>• Coming from <span className="font-medium">Lille (France), </span> I studied in the <span className="font-medium">French High School of Luxembourg</span></li>
                   <li>• Passionate about the <span className="font-bold text-indigo-600 dark:text-indigo-400">mathematical nature of physics</span> and accurate simulation capabilities</li>
                   <li>• Always interested in <span className="font-medium">fundamental laws of nature</span> and our ability to model them</li>
                 </ul>

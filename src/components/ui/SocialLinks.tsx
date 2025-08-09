@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 
 interface SocialLink {
   name: string
@@ -50,11 +51,6 @@ const socialLinks: SocialLink[] = [
 
 const contactBadges: ContactBadge[] = [
   {
-    type: 'Email',
-    value: 'pauldevianne@gmail.com',
-    icon: '📧'
-  },
-  {
     type: 'Location',
     value: 'Singapore',
     icon: '📍'
@@ -62,6 +58,18 @@ const contactBadges: ContactBadge[] = [
 ]
 
 export default function SocialLinks() {
+  const [emailCopied, setEmailCopied] = useState(false)
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('pauldevianne@gmail.com')
+      setEmailCopied(true)
+      setTimeout(() => setEmailCopied(false), 1200)
+    } catch (err) {
+      console.error('Failed to copy email:', err)
+    }
+  }
+
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="flex flex-wrap justify-center gap-2">
@@ -71,20 +79,47 @@ export default function SocialLinks() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
+            className="transition-all duration-300 transform hover:scale-105"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
-              <span className="text-gray-700 dark:text-gray-300">{link.icon}</span>
-              <span className="text-gray-700 dark:text-gray-300">{link.username}</span>
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm transition-all duration-300 ${
+              link.name === 'GitHub' 
+                ? 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 hover:from-gray-700 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-500 hover:text-white dark:hover:text-white' 
+                : link.name === 'LinkedIn' 
+                ? 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 hover:from-blue-500 hover:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 hover:text-white dark:hover:text-white'
+                : 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 hover:from-green-500 hover:to-green-600 dark:hover:from-green-600 dark:hover:to-green-700 hover:text-white dark:hover:text-white'
+            }`}>
+              <span className="transition-transform duration-200 hover:rotate-12">{link.icon}</span>
+              <span className="text-gray-700 dark:text-gray-300 hover:text-white dark:hover:text-white transition-colors duration-300">{link.username}</span>
             </div>
           </Link>
         ))}
       </div>
       <div className="flex flex-wrap justify-center gap-2">
+        {/* Clickable Email */}
+        <button
+          onClick={copyEmail}
+          className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm cursor-pointer relative overflow-hidden transform transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 ${
+            emailCopied 
+              ? 'bg-gradient-to-r from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 text-green-700 dark:text-green-300' 
+              : 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 hover:from-indigo-100 hover:to-purple-100 dark:hover:from-indigo-900/40 dark:hover:to-purple-900/40'
+          }`}
+        >
+          <span className="relative z-10 transition-transform duration-200">
+            {emailCopied ? '✅' : '📧'}
+          </span>
+          <span className={`relative z-10 transition-all duration-200 ${
+            emailCopied 
+              ? 'text-green-700 dark:text-green-300 font-medium' 
+              : 'text-gray-700 dark:text-gray-300'
+          }`}>
+            {emailCopied ? '✓ Copied!' : 'pauldevianne@gmail.com'}
+          </span>
+        </button>
+        
         {contactBadges.map((badge) => (
           <div
             key={badge.type}
-            className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm"
+            className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-700 text-sm"
           >
             <span>{badge.icon}</span>
             <span>{badge.value}</span>
@@ -93,4 +128,4 @@ export default function SocialLinks() {
       </div>
     </div>
   )
-} 
+}
